@@ -20,9 +20,7 @@ const showSuccessAlert = () => {
 };
 
 const Dashboard = () => {
-  // const [isAdmin] = useAdmin();
-  // const [isStudent] = useStudent();
-
+ 
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
@@ -46,7 +44,7 @@ const Dashboard = () => {
               to="/"
               className=" flex text-lg text-gray-600 items-center   "
             >
-              {/* <FaArrowLeft className=" mr-3 " /> */}
+             
               Financial Management Software
             </Link>
           </div>
@@ -87,13 +85,7 @@ const Dashboard = () => {
           </div>
           <div className="justify-around      text-center rounded-lg my-8 bg-base-300 w-full mx-auto">
             <div>
-              {/* {isAdmin ? (
-                <AdminMenu />
-              ) : isStudent ? (
-                <StudentMenu />
-              ) : (
-                <UserMenu />
-              )} */}
+              
             </div>
           </div>
         </div>
