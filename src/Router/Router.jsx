@@ -3,6 +3,8 @@ import Signin from "../Pages/Auth/Signin";
 import SignUp from "../Pages/Auth/SignUp";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import PrivateRoute from "./PrivateRoute";
+import Profile from "../components/Profile";
+import Cost from "../components/Cost";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -12,8 +14,12 @@ const router = createBrowserRouter([
             </PrivateRoute>,
         children: [
             {
-                path: '/dashboard/profile',
-                element: "profile"
+                path: '/profile',
+                element: <Profile/>
+            },
+            {
+                path: '/cost',
+                element: <Cost/>
             }
         ]
     },

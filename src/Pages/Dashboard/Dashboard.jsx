@@ -1,14 +1,11 @@
 import { useContext } from "react";
-import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-import { FaArrowLeft, FaSignOutAlt, FaUser } from "react-icons/fa";
-// import useAdmin from "../../Hook/useAdmin";
-// import useStudent from "../../Hook/useStudent";
+import {FaDollarSign, FaHome, FaSignOutAlt, FaUser } from "react-icons/fa";
+ 
 import { AuthContext } from "../../providers/AuthProvider";
-// import AdminMenu from "./Admin/AdminMenu";
-// import StudentMenu from "./Student/StudentMenu";
-// import UserMenu from "./User/UserMenu";
+ 
 import "./dashboard.css";
 
 const showSuccessAlert = () => {
@@ -20,7 +17,7 @@ const showSuccessAlert = () => {
 };
 
 const Dashboard = () => {
- 
+
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logOut } = useContext(AuthContext);
@@ -44,7 +41,7 @@ const Dashboard = () => {
               to="/"
               className=" flex text-lg text-gray-600 items-center   "
             >
-             
+
               Financial Management Software
             </Link>
           </div>
@@ -65,7 +62,7 @@ const Dashboard = () => {
               <h4 className="text-lg font-bold">Name: {user?.displayName}</h4>
 
               <div className="flex gap-2 justify-center pt-3">
-                <Link to="/dashboard/profile">
+                <Link to="/profile">
                   <button
                     type="button"
                     className="py-3 font-semibold rounded-full btn bg-slate-300 flex items-center  "
@@ -85,7 +82,21 @@ const Dashboard = () => {
           </div>
           <div className="justify-around      text-center rounded-lg my-8 bg-base-300 w-full mx-auto">
             <div>
-              
+              <div className="flex flex-col gap-4">
+                <NavLink to="/">
+                  <li className="flex p-2 gap-1 bg-gradient-to-r from-[#ba97e9] to-[#9756F5] text-white w-full items-center rounded-r-3xl hover:from-[#ac8cd6] hover:to-[#9756F5] transition-all duration-500">
+                    <FaHome className="mx-4" />
+                    <p className="font-medium text-lg">Dashboard</p>
+                  </li>
+                </NavLink>
+
+                <NavLink to="/cost">
+                  <li className="flex p-2 gap-1 bg-gradient-to-r from-[#ba97e9] to-[#9756F5] text-white w-full items-center rounded-r-3xl hover:from-[#ac8cd6] hover:to-[#9756F5] transition-all duration-500">
+                    <FaDollarSign className="mx-4" />
+                    <p className="font-medium text-lg">Cost Management</p>
+                  </li>
+                </NavLink>
+              </div>
             </div>
           </div>
         </div>
