@@ -116,7 +116,7 @@ const Cost = () => {
 
                     <br />
                     <div className="flex justify-end gap-4">
-                   
+
                         <button type="submit" className="btn">
                             Add cost
                         </button>
